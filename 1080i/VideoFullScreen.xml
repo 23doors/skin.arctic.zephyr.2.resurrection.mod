@@ -4,6 +4,32 @@
     <onload>ClearProperty(ViewType,Home)</onload>
     <controls>
 
+        <control type="group" id="1">
+            <visible>!String.IsEmpty(Skin.String(censor)) | !String.IsEmpty(Skin.String(censor_screenshot))</visible>
+            <control type="image" id="15">
+                <width>1900</width>
+                <height>1060</height>
+                <top>10</top>
+                <left>10</left>
+                <texture>common/black-square.png</texture>
+            </control>
+            <control type="image" id="16">
+                <width>1820</width>
+                <height>980</height>
+                <top>50</top>
+                <left>50</left>
+                <texture>$INFO[Skin.String(censor_screenshot)]</texture>
+            </control>
+            <control type="label" id="17">
+                <width>auto</width>
+                <label>$INFO[Skin.String(censor)]</label>
+                <height>1080</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <textcolor>panel_fg_100</textcolor>
+            </control>
+        </control>
+
         <include content="Object_ShadowSpot_Group">
             <param name="id" value="0" />
             <param name="width" value="960" />

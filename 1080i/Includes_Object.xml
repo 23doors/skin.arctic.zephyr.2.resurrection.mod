@@ -515,6 +515,15 @@
         </definition>
     </include>
 
+    <variable name="AudioLanguage">
+        <value condition="!String.IsEmpty(ListItem.AudioLanguage)">[UPPERCASE]$INFO[ListItem.AudioLanguage][/UPPERCASE]</value>
+        <value>NONE</value>
+    </variable>
+    <variable name="SubtitleLanguage">
+        <value condition="!String.IsEmpty(ListItem.SubtitleLanguage)">[UPPERCASE]$INFO[ListItem.SubtitleLanguage][/UPPERCASE]</value>
+        <value>NONE</value>
+    </variable>
+
     <include name="Object_Codecs">
         <param name="infohide" default="true" />
         <definition>
@@ -532,6 +541,48 @@
                 <itemgap>20</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
                 <visible>!String.IsEmpty(ListItem.VideoCodec) + !String.IsEmpty(ListItem.AudioCodec)</visible>
+
+                <control type="image">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <height>32</height>
+                    <width>32</width>
+                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <texture colordiffuse="main_fg_90">flags/audio.png</texture>
+                    <visible>!String.IsEmpty(ListItem.AudioLanguage)</visible>
+                </control>
+                <control type="label">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <height>32</height>
+                    <width>auto</width>
+                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <label>$VAR[AudioLanguage]</label>
+                    <visible>!String.IsEmpty(ListItem.AudioLanguage)</visible>
+                </control>
+                <control type="image">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <height>32</height>
+                    <width>32</width>
+                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <texture colordiffuse="main_fg_90">flags/subtitles.png</texture>
+                    <visible>!String.IsEmpty(ListItem.AudioLanguage)</visible>
+                </control>
+                <control type="label">
+                    <fadetime>100</fadetime>
+                    <centertop>50%</centertop>
+                    <height>32</height>
+                    <width>auto</width>
+                    <aspectratio align="left">keep</aspectratio>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <label>$VAR[SubtitleLanguage]</label>
+                    <visible>!String.IsEmpty(ListItem.AudioLanguage)</visible>
+                </control>
+
                 <control type="image">
                     <fadetime>100</fadetime>
                     <centertop>50%</centertop>
@@ -1192,7 +1243,7 @@
                     <param name="textcolor" value="$PARAM[textcolor]" />
                     <param name="visible" value="String.IsEqual($PARAM[container]ListItem.DBType,album)" />
                 </include>
-                
+
                 <!-- Next Aired -->
                 <include content="Object_Info_Line_Label">
                     <param name="id" value="66300" />
@@ -2101,7 +2152,7 @@
                 <align>$PARAM[align]</align>
                 <itemgap>8</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>
-                
+
 
                 <control type="image">
                     <top>-17</top>
@@ -2678,7 +2729,7 @@
 
     <include name="Object_Scrollbars">
         <include content="Object_Scrollbar_Vert">
-            <param name="visible" value="Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(51) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(515) | Control.IsVisible(540) | Control.IsVisible(516)" />  
+            <param name="visible" value="Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(51) | Control.IsVisible(510) | Control.IsVisible(511) | Control.IsVisible(512) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(515) | Control.IsVisible(540) | Control.IsVisible(516)" />
         </include>
         <include content="Object_Scrollbar_Horz">
             <param name="visible" value="Control.IsVisible(52) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(522) | Control.IsVisible(523) | Control.IsVisible(53)" />
