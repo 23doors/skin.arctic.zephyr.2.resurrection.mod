@@ -1721,12 +1721,12 @@ msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#30079"
-msgid "Netflix style | Multiple widgets"
+msgid "Modern | Multiple widgets"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#30080"
-msgid "Netflix style (dark) | Multiple widgets"
+msgid "Modern (dark) | Multiple widgets"
 msgstr ""
 
 #: /1080i/Includes_Labels.xml
@@ -1742,4 +1742,164 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#30083"
 msgid "Choose between icons type"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30084"
+msgid "Highlight"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30085"
+msgid "Gradient"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30086"
+msgid "Gradient colour"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30087"
+msgid "Creator"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30088"
+msgid "Watched indicators"
+msgstr ""
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#30089"
+msgid "Watched progress colour"
+msgstr ""
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#30090"
+msgid "Hide all indicators"
+msgstr ""
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#30091"
+msgid "Classic corner style indicators"
+msgstr ""
+
+#: /shortcuts/Custom_1121_EnableIndicators.xml
+msgctxt "#30092"
+msgid "In-progress"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30093"
+msgid "Overlay"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30094"
+msgid "Gradient preview"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30095"
+msgid "Colour"
+msgstr ""
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30096"
+msgid "Value"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30097"
+msgid "Enable Monochrome Highlight"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30098"
+msgid "Color Highlight"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30099"
+msgid "Disable background overlay"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30100"
+msgid "Disable skin splash art on startup"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30101"
+msgid "Flix View | Multiple widgets"
+msgstr ""
+
+#: /1080i/Includes_Info.xml
+msgctxt "#30102"
+msgid "Trailer"
+msgstr ""
+
+#: /1080i/Includes_Info.xml
+msgctxt "#30103"
+msgid "Cast"
+msgstr ""
+
+#: /1080i/Includes_Info.xml
+msgctxt "#30104"
+msgid "Rating"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#30105"
+msgid "Switch Profile"
+msgstr ""
+
+#: /1080i/Includes_Object.xml
+msgctxt "#30106"
+msgid "Match"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30107"
+msgid "Play Trailer in background in Flix View"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30108"
+msgid "Disable profile info in narrow menu"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30109"
+msgid "Enable zoom on hover"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30110"
+msgid "Show player tempo controls in OSD"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30111"
+msgid "Set delay to playing Trailers in Flix View"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30112"
+msgid "4 seconds"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30113"
+msgid "7 seconds"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30114"
+msgid "Don't blur Home screen"
+msgstr ""
+
+#: /1080i/Includes_View_54_AEL.xml
+msgctxt "#31440"
+msgid "ROM Info Wall Trailer"
 msgstr ""

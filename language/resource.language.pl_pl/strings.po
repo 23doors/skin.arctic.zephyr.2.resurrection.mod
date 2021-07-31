@@ -1686,13 +1686,13 @@ msgstr "Zakończono initializowanie skórki"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#30079"
-msgid "Netflix style | Multiple widgets"
-msgstr "Styl Netfliksowy | Wiele widgetów"
+msgid "Modern | Multiple widgets"
+msgstr "Modern | Wiele widgetów"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#30080"
-msgid "Netflix style (dark) | Multiple widgets"
-msgstr "Styl Netfliksowy (ciemny) | Wiele widgetów"
+msgid "Modern (dark) | Multiple widgets"
+msgstr "Modern (ciemny) | Wiele widgetów"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#30081"
@@ -1706,5 +1706,155 @@ msgstr "Zaktualizuj bibliotekę"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#30083"
-msgid "Switch to colorful icons"
+msgid "Choose between icons type"
 msgstr "Wybierz pomiędzy typem ikon"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30084"
+msgid "Highlight"
+msgstr "Podświetlenie"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30085"
+msgid "Gradient"
+msgstr "Gradient"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30086"
+msgid "Gradient colour"
+msgstr "Kolor gradientu"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30087"
+msgid "Creator"
+msgstr "Kreator"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30088"
+msgid "Watched indicators"
+msgstr "Znaczniki obejrzanych"
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#30089"
+msgid "Watched progress colour"
+msgstr "Kolor postępu obejrzanych"
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#30090"
+msgid "Hide all indicators"
+msgstr "Ukryj wszystkie znaczniki"
+
+#: /1080i/Custom_1121_EnableIndicators.xml
+msgctxt "#30091"
+msgid "Classic corner style indicators"
+msgstr "Styl klasyczny znaczników rogu"
+
+#: /shortcuts/Custom_1121_EnableIndicators.xml
+msgctxt "#30092"
+msgid "In-progress"
+msgstr "W trakcie"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30093"
+msgid "Overlay"
+msgstr "Nakładka"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30094"
+msgid "Gradient preview"
+msgstr "Podgląd gradientu"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30095"
+msgid "Colour"
+msgstr "Kolor"
+
+#: /1080i/Custom_1117_ColorPicker.xml
+msgctxt "#30096"
+msgid "Value"
+msgstr "Wartość"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30097"
+msgid "Enable Monochrome Highlight"
+msgstr "Włącz jednokolorowe podświetlenie"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30098"
+msgid "Color Highlight"
+msgstr "Kolor podświetlenia"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30099"
+msgid "Disable background overlay"
+msgstr "Wyłącz nakładkę na tło"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30100"
+msgid "Disable skin splash art on startup"
+msgstr "Wyłącz ekran ładowania skórki"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30101"
+msgid "Flix View | Multiple widgets"
+msgstr "Widok Flix | Wiele widgetów"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#30102"
+msgid "Trailer"
+msgstr ""
+
+#: /1080i/Includes_Info.xml
+msgctxt "#30103"
+msgid "Cast"
+msgstr "Obsada"
+
+#: /1080i/Includes_Info.xml
+msgctxt "#30104"
+msgid "Rating"
+msgstr "Ocena"
+
+#: /1080i/Includes_Home.xml
+msgctxt "#30105"
+msgid "Switch Profile"
+msgstr "Zmień Profil"
+
+#: /1080i/Includes_Object.xml
+msgctxt "#30106"
+msgid "Match"
+msgstr "Trafność"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30107"
+msgid "Play Trailer in background in Flix View"
+msgstr "Odtwarzaj zwiastun w tle w widoku Flix"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30108"
+msgid "Disable profile info in narrow menu"
+msgstr "Wyłącz informacje o profilu w wysuwanym menu"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30109"
+msgid "Enable zoom on hover"
+msgstr "Włącz przybliżenie po najechaniu"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30110"
+msgid "Show player tempo controls in OSD"
+msgstr "Pokaż kontrolki do zmiany tempa odtwarzania na OSD"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30111"
+msgid "Set delay to playing Trailers in Flix View"
+msgstr "Ustaw opóźnienie do odtwarzania zwiastunów w widoku Flix"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30112"
+msgid "4 seconds"
+msgstr "4 sekundy"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#30113"
+msgid "7 seconds"
+msgstr "7 sekund"

@@ -54,7 +54,8 @@
         <param name="icon" default="$INFO[ListItem.Icon]" />
         <param name="labelinclude" default="View_51_Wall_Label" />
         <param name="aspectratio" default="scale" />
-        <param name="diffuse" default="diffuse/poster-wall.png" /> <!-- FIX ME -->
+        <param name="diffuse" default="diffuse/poster-wall.png" />
+        <!-- FIX ME -->
         <param name="colordiffuse" default="panel_fg_70" />
         <definition>
             <control type="group">
@@ -87,11 +88,13 @@
                     <include condition="$PARAM[selectbox] + Skin.String(FocusBorderSize, Thin)">View_Selectbox_Thin</include>
                 </control>
             </control>
-            
+
         </definition>
     </include>
 
-    <include name="View_PVR_Guide_Top"><top>234</top></include>
+    <include name="View_PVR_Guide_Top">
+        <top>234</top>
+    </include>
 
     <include name="View_PVR_Guide_Info">
         <control type="grouplist">
@@ -129,7 +132,7 @@
         <control type="epggrid" id="10" description="EPG">
             <onup>11</onup>
             <ondown>11</ondown>
-            <onback>11</onback>    
+            <onback>11</onback>
             <viewtype label="19069">list</viewtype>
             <include condition="!Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_ProgressLine_Full</include>
             <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_ProgressLine_Half</include>
@@ -223,7 +226,7 @@
         <control type="epggrid" id="10" description="EPG">
             <onup>11</onup>
             <ondown>11</ondown>
-            <onback>11</onback>    
+            <onback>11</onback>
             <viewtype label="19069">list</viewtype>
             <include condition="!Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_ProgressLine_Full</include>
             <include condition="Skin.HasSetting(PVRGuide.Info)">View_PVR_Guide_ProgressLine_Half</include>
@@ -410,6 +413,7 @@
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
                         <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Label)</visible>
                         <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,0) + !Container($PARAM[id]).IsUpdating</visible>
+                        <visible>!Skin.HasSetting(HomeMultiFlixView)</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -424,6 +428,7 @@
                         <visible>!String.StartsWith(ListItem.FolderPath,pvr://)</visible>
                         <visible>!String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
                         <visible>!$PARAM[uselabel2]</visible>
+                        <visible>!Skin.HasSetting(HomeMultiFlixView)</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -440,6 +445,7 @@
                         <visible>!String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode)</visible>
                         <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Year)</visible>
                         <visible>!$PARAM[uselabel2]</visible>
+                        <visible>!Skin.HasSetting(HomeMultiFlixView)</visible>
                     </control>
                     <control type="group">
                         <include>Defs_SmallBusySpinner</include>
@@ -447,6 +453,7 @@
                         <left>14</left>
                         <visible>Container($PARAM[id]).IsUpdating</visible>
                         <visible>$PARAM[spinner-visible]</visible>
+                        <!-- <visible>!Skin.HasSetting(HomeMultiFlixView)</visible> -->
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -597,7 +604,7 @@
         <ondown>62</ondown>
     </include>
 
-    <include name="View_PVR_Channels">    
+    <include name="View_PVR_Channels">
         <onleft>SetFocus(300)</onleft>
         <onright>9000</onright>
         <orientation>vertical</orientation>
@@ -729,7 +736,8 @@
         <param name="textbox_height" default="100" />
         <param name="itemlayout" default="View_TopItems_Itemlayout" />
         <param name="id" default="5600" />
-        <param name="diffuse" default="diffuse/topitems.png" /> <!-- FIX THIS -->
+        <param name="diffuse" default="diffuse/topitems.png" />
+        <!-- FIX THIS -->
         <definition>
             <top>-15</top>
             <left>-15</left>
@@ -997,7 +1005,7 @@
     <include name="View_Selectbox_Bold">
         <param name="overlay" default="true" />
         <param name="pad" default="-7" />
-        <param name="colordiffuse" default="$VAR[ColorHighlight2]" />
+        <param name="colordiffuse" default="$VAR[ColorHighlight]" />
         <param name="focusbounce" default="true" />
         <definition>
             <control type="group">
@@ -1010,10 +1018,26 @@
                     <top>$PARAM[pad]</top>
                     <right>$PARAM[pad]</right>
                     <bottom>$PARAM[pad]</bottom>
-                    <control type="image">
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture border="20" colordiffuse="$PARAM[colordiffuse]">common/selectbox.png</texture>
+                    <control type="group">
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                            <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/selectbox.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                            <texture colordiffuse="$VAR[ColorGradient]" border="10">common/selectbox-gradient.png</texture>
+                        </control>
+                        <visible>String.IsEqual(Skin.String(PosterHighlight),Highlight)</visible>
+                    </control>
+                    <control type="group">
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                            <texture colordiffuse="ffffffff" border="10">common/selectbox.png</texture>
+                        </control>
+                        <visible>String.IsEqual(Skin.String(PosterHighlight),White)</visible>
                     </control>
                 </control>
                 <include condition="$PARAM[overlay]">View_WatchedOverlay_Focus</include>
@@ -1037,10 +1061,26 @@
                     <top>$PARAM[pad]</top>
                     <right>$PARAM[pad]</right>
                     <bottom>$PARAM[pad]</bottom>
-                    <control type="image">
-                        <bordersize>15</bordersize>
-                        <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
-                        <texture border="20" colordiffuse="$PARAM[colordiffuse]">common/selectbox2.png</texture>
+                    <control type="group">
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                            <texture colordiffuse="$VAR[ColorHighlight]" border="10">common/selectbox2.png</texture>
+                        </control>
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                            <texture colordiffuse="$VAR[ColorGradient]" border="10">common/selectbox2-gradient.png</texture>
+                        </control>
+                        <visible>String.IsEqual(Skin.String(PosterHighlight),Highlight)</visible>
+                    </control>
+                    <control type="group">
+                        <control type="image">
+                            <bordersize>15</bordersize>
+                            <bordertexture border="30" colordiffuse="55ffffff">common/shadow-15.png</bordertexture>
+                            <texture colordiffuse="ffffffff" border="10">common/selectbox2.png</texture>
+                        </control>
+                        <visible>String.IsEqual(Skin.String(PosterHighlight),White)</visible>
                     </control>
                 </control>
                 <include condition="$PARAM[overlay]">View_WatchedOverlay_Focus</include>

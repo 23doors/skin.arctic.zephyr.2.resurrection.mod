@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="Defs_Progress_Gradient">
+        <control type="progress" id="$PARAM[id]">
+            <nested />
+        </control>
+        <control type="progress">
+            <description>Progressbar</description>
+            <top>$PARAM[top]</top>
+            <nested />
+            <texturebg colordiffuse="00ffffff" border="4">diffuse/progress-bg.png</texturebg>
+            <lefttexture colordiffuse="00ffffff" border="4">diffuse/progress-left.png</lefttexture>
+            <midtexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse.png">diffuse/progress-end.png</midtexture>
+            <righttexture colordiffuse="$VAR[ColorGradient]" border="4" diffuse="progress/diffuse-end.png">diffuse/progress-right.png</righttexture>
+            <include content="Defs_Progress_Colorfade">
+                <param name="id" value="$PARAM[id]" />
+            </include>
+        </control>
+    </include>
+
     <include name="Defs_Global_Fade_Blur">
         <fadetime>600</fadetime>
     </include>
@@ -13,7 +31,7 @@
     <variable name="Defs_ThemeSwitcher_StartTime">
         <value>06:00</value>
     </variable>
-    
+
     <variable name="Defs_WidgetTextContrast_Start">
         <value condition="Skin.HasSetting(EnableHighContrastWidgetText)">70</value>
         <value>40</value>
@@ -23,7 +41,7 @@
         <value condition="Skin.HasSetting(EnableHighContrastWidgetText)">70</value>
         <value>40</value>
     </variable>
-    
+
     <variable name="Defs_ItemLayout_LeftSideObjectSlideVertical">
         <value condition="!String.IsEqual(ListItem.DBType,episode) + !$EXP[FontSetIsMediumOrLarger]">-40</value>
         <value condition="String.IsEqual(ListItem.DBType,episode) + !Integer.IsGreater(ListItem.Season,999) + !$EXP[FontSetIsMediumOrLarger]">-30</value>
@@ -107,7 +125,7 @@
         <value>main_fg_100</value>
     </variable>
 
-    <!-- <include name="Defs_Settings_Gradient">
+    <include name="Defs_Settings_Gradient">
         <control type="group">
             <nested />
             <animation effect="fade" start="0" end="100" time="1">Visible</animation>
@@ -128,7 +146,116 @@
                 <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
             </control>
         </control>
-    </include> -->
+    </include>
+
+    <include name="Defs_Progress_Colorfader">
+        <animation effect="fade" start="100" end="0" condition="Integer.IsEqual($PARAM[info],0)">Conditional</animation>
+        <animation effect="fade" start="100" end="1" condition="Integer.IsEqual($PARAM[info],1)">Conditional</animation>
+        <animation effect="fade" start="100" end="2" condition="Integer.IsEqual($PARAM[info],2)">Conditional</animation>
+        <animation effect="fade" start="100" end="3" condition="Integer.IsEqual($PARAM[info],3)">Conditional</animation>
+        <animation effect="fade" start="100" end="4" condition="Integer.IsEqual($PARAM[info],4)">Conditional</animation>
+        <animation effect="fade" start="100" end="5" condition="Integer.IsEqual($PARAM[info],5)">Conditional</animation>
+        <animation effect="fade" start="100" end="6" condition="Integer.IsEqual($PARAM[info],6)">Conditional</animation>
+        <animation effect="fade" start="100" end="7" condition="Integer.IsEqual($PARAM[info],7)">Conditional</animation>
+        <animation effect="fade" start="100" end="8" condition="Integer.IsEqual($PARAM[info],8)">Conditional</animation>
+        <animation effect="fade" start="100" end="9" condition="Integer.IsEqual($PARAM[info],9)">Conditional</animation>
+        <animation effect="fade" start="100" end="10" condition="Integer.IsEqual($PARAM[info],10)">Conditional</animation>
+        <animation effect="fade" start="100" end="11" condition="Integer.IsEqual($PARAM[info],11)">Conditional</animation>
+        <animation effect="fade" start="100" end="12" condition="Integer.IsEqual($PARAM[info],12)">Conditional</animation>
+        <animation effect="fade" start="100" end="13" condition="Integer.IsEqual($PARAM[info],13)">Conditional</animation>
+        <animation effect="fade" start="100" end="14" condition="Integer.IsEqual($PARAM[info],14)">Conditional</animation>
+        <animation effect="fade" start="100" end="15" condition="Integer.IsEqual($PARAM[info],15)">Conditional</animation>
+        <animation effect="fade" start="100" end="16" condition="Integer.IsEqual($PARAM[info],16)">Conditional</animation>
+        <animation effect="fade" start="100" end="17" condition="Integer.IsEqual($PARAM[info],17)">Conditional</animation>
+        <animation effect="fade" start="100" end="18" condition="Integer.IsEqual($PARAM[info],18)">Conditional</animation>
+        <animation effect="fade" start="100" end="19" condition="Integer.IsEqual($PARAM[info],19)">Conditional</animation>
+        <animation effect="fade" start="100" end="20" condition="Integer.IsEqual($PARAM[info],20)">Conditional</animation>
+        <animation effect="fade" start="100" end="21" condition="Integer.IsEqual($PARAM[info],21)">Conditional</animation>
+        <animation effect="fade" start="100" end="22" condition="Integer.IsEqual($PARAM[info],22)">Conditional</animation>
+        <animation effect="fade" start="100" end="23" condition="Integer.IsEqual($PARAM[info],23)">Conditional</animation>
+        <animation effect="fade" start="100" end="24" condition="Integer.IsEqual($PARAM[info],24)">Conditional</animation>
+        <animation effect="fade" start="100" end="25" condition="Integer.IsEqual($PARAM[info],25)">Conditional</animation>
+        <animation effect="fade" start="100" end="26" condition="Integer.IsEqual($PARAM[info],26)">Conditional</animation>
+        <animation effect="fade" start="100" end="27" condition="Integer.IsEqual($PARAM[info],27)">Conditional</animation>
+        <animation effect="fade" start="100" end="28" condition="Integer.IsEqual($PARAM[info],28)">Conditional</animation>
+        <animation effect="fade" start="100" end="29" condition="Integer.IsEqual($PARAM[info],29)">Conditional</animation>
+        <animation effect="fade" start="100" end="30" condition="Integer.IsEqual($PARAM[info],30)">Conditional</animation>
+        <animation effect="fade" start="100" end="31" condition="Integer.IsEqual($PARAM[info],31)">Conditional</animation>
+        <animation effect="fade" start="100" end="32" condition="Integer.IsEqual($PARAM[info],32)">Conditional</animation>
+        <animation effect="fade" start="100" end="33" condition="Integer.IsEqual($PARAM[info],33)">Conditional</animation>
+        <animation effect="fade" start="100" end="34" condition="Integer.IsEqual($PARAM[info],34)">Conditional</animation>
+        <animation effect="fade" start="100" end="35" condition="Integer.IsEqual($PARAM[info],35)">Conditional</animation>
+        <animation effect="fade" start="100" end="36" condition="Integer.IsEqual($PARAM[info],36)">Conditional</animation>
+        <animation effect="fade" start="100" end="37" condition="Integer.IsEqual($PARAM[info],37)">Conditional</animation>
+        <animation effect="fade" start="100" end="38" condition="Integer.IsEqual($PARAM[info],38)">Conditional</animation>
+        <animation effect="fade" start="100" end="39" condition="Integer.IsEqual($PARAM[info],39)">Conditional</animation>
+        <animation effect="fade" start="100" end="40" condition="Integer.IsEqual($PARAM[info],40)">Conditional</animation>
+        <animation effect="fade" start="100" end="41" condition="Integer.IsEqual($PARAM[info],41)">Conditional</animation>
+        <animation effect="fade" start="100" end="42" condition="Integer.IsEqual($PARAM[info],42)">Conditional</animation>
+        <animation effect="fade" start="100" end="43" condition="Integer.IsEqual($PARAM[info],43)">Conditional</animation>
+        <animation effect="fade" start="100" end="44" condition="Integer.IsEqual($PARAM[info],44)">Conditional</animation>
+        <animation effect="fade" start="100" end="45" condition="Integer.IsEqual($PARAM[info],45)">Conditional</animation>
+        <animation effect="fade" start="100" end="46" condition="Integer.IsEqual($PARAM[info],46)">Conditional</animation>
+        <animation effect="fade" start="100" end="47" condition="Integer.IsEqual($PARAM[info],47)">Conditional</animation>
+        <animation effect="fade" start="100" end="48" condition="Integer.IsEqual($PARAM[info],48)">Conditional</animation>
+        <animation effect="fade" start="100" end="49" condition="Integer.IsEqual($PARAM[info],49)">Conditional</animation>
+        <animation effect="fade" start="100" end="50" condition="Integer.IsEqual($PARAM[info],50)">Conditional</animation>
+        <animation effect="fade" start="100" end="51" condition="Integer.IsEqual($PARAM[info],51)">Conditional</animation>
+        <animation effect="fade" start="100" end="52" condition="Integer.IsEqual($PARAM[info],52)">Conditional</animation>
+        <animation effect="fade" start="100" end="53" condition="Integer.IsEqual($PARAM[info],53)">Conditional</animation>
+        <animation effect="fade" start="100" end="54" condition="Integer.IsEqual($PARAM[info],54)">Conditional</animation>
+        <animation effect="fade" start="100" end="55" condition="Integer.IsEqual($PARAM[info],55)">Conditional</animation>
+        <animation effect="fade" start="100" end="56" condition="Integer.IsEqual($PARAM[info],56)">Conditional</animation>
+        <animation effect="fade" start="100" end="57" condition="Integer.IsEqual($PARAM[info],57)">Conditional</animation>
+        <animation effect="fade" start="100" end="58" condition="Integer.IsEqual($PARAM[info],58)">Conditional</animation>
+        <animation effect="fade" start="100" end="59" condition="Integer.IsEqual($PARAM[info],59)">Conditional</animation>
+        <animation effect="fade" start="100" end="60" condition="Integer.IsEqual($PARAM[info],60)">Conditional</animation>
+        <animation effect="fade" start="100" end="61" condition="Integer.IsEqual($PARAM[info],61)">Conditional</animation>
+        <animation effect="fade" start="100" end="62" condition="Integer.IsEqual($PARAM[info],62)">Conditional</animation>
+        <animation effect="fade" start="100" end="63" condition="Integer.IsEqual($PARAM[info],63)">Conditional</animation>
+        <animation effect="fade" start="100" end="64" condition="Integer.IsEqual($PARAM[info],64)">Conditional</animation>
+        <animation effect="fade" start="100" end="65" condition="Integer.IsEqual($PARAM[info],65)">Conditional</animation>
+        <animation effect="fade" start="100" end="66" condition="Integer.IsEqual($PARAM[info],66)">Conditional</animation>
+        <animation effect="fade" start="100" end="67" condition="Integer.IsEqual($PARAM[info],67)">Conditional</animation>
+        <animation effect="fade" start="100" end="68" condition="Integer.IsEqual($PARAM[info],68)">Conditional</animation>
+        <animation effect="fade" start="100" end="69" condition="Integer.IsEqual($PARAM[info],69)">Conditional</animation>
+        <animation effect="fade" start="100" end="70" condition="Integer.IsEqual($PARAM[info],70)">Conditional</animation>
+        <animation effect="fade" start="100" end="71" condition="Integer.IsEqual($PARAM[info],71)">Conditional</animation>
+        <animation effect="fade" start="100" end="72" condition="Integer.IsEqual($PARAM[info],72)">Conditional</animation>
+        <animation effect="fade" start="100" end="73" condition="Integer.IsEqual($PARAM[info],73)">Conditional</animation>
+        <animation effect="fade" start="100" end="74" condition="Integer.IsEqual($PARAM[info],74)">Conditional</animation>
+        <animation effect="fade" start="100" end="75" condition="Integer.IsEqual($PARAM[info],75)">Conditional</animation>
+        <animation effect="fade" start="100" end="76" condition="Integer.IsEqual($PARAM[info],76)">Conditional</animation>
+        <animation effect="fade" start="100" end="77" condition="Integer.IsEqual($PARAM[info],77)">Conditional</animation>
+        <animation effect="fade" start="100" end="78" condition="Integer.IsEqual($PARAM[info],78)">Conditional</animation>
+        <animation effect="fade" start="100" end="79" condition="Integer.IsEqual($PARAM[info],79)">Conditional</animation>
+        <animation effect="fade" start="100" end="80" condition="Integer.IsEqual($PARAM[info],80)">Conditional</animation>
+        <animation effect="fade" start="100" end="81" condition="Integer.IsEqual($PARAM[info],81)">Conditional</animation>
+        <animation effect="fade" start="100" end="82" condition="Integer.IsEqual($PARAM[info],82)">Conditional</animation>
+        <animation effect="fade" start="100" end="83" condition="Integer.IsEqual($PARAM[info],83)">Conditional</animation>
+        <animation effect="fade" start="100" end="84" condition="Integer.IsEqual($PARAM[info],84)">Conditional</animation>
+        <animation effect="fade" start="100" end="85" condition="Integer.IsEqual($PARAM[info],85)">Conditional</animation>
+        <animation effect="fade" start="100" end="86" condition="Integer.IsEqual($PARAM[info],86)">Conditional</animation>
+        <animation effect="fade" start="100" end="87" condition="Integer.IsEqual($PARAM[info],87)">Conditional</animation>
+        <animation effect="fade" start="100" end="88" condition="Integer.IsEqual($PARAM[info],88)">Conditional</animation>
+        <animation effect="fade" start="100" end="89" condition="Integer.IsEqual($PARAM[info],89)">Conditional</animation>
+        <animation effect="fade" start="100" end="90" condition="Integer.IsEqual($PARAM[info],90)">Conditional</animation>
+        <animation effect="fade" start="100" end="91" condition="Integer.IsEqual($PARAM[info],91)">Conditional</animation>
+        <animation effect="fade" start="100" end="92" condition="Integer.IsEqual($PARAM[info],92)">Conditional</animation>
+        <animation effect="fade" start="100" end="93" condition="Integer.IsEqual($PARAM[info],93)">Conditional</animation>
+        <animation effect="fade" start="100" end="94" condition="Integer.IsEqual($PARAM[info],94)">Conditional</animation>
+        <animation effect="fade" start="100" end="95" condition="Integer.IsEqual($PARAM[info],95)">Conditional</animation>
+        <animation effect="fade" start="100" end="96" condition="Integer.IsEqual($PARAM[info],96)">Conditional</animation>
+        <animation effect="fade" start="100" end="97" condition="Integer.IsEqual($PARAM[info],97)">Conditional</animation>
+        <animation effect="fade" start="100" end="98" condition="Integer.IsEqual($PARAM[info],98)">Conditional</animation>
+        <animation effect="fade" start="100" end="99" condition="Integer.IsEqual($PARAM[info],99)">Conditional</animation>
+    </include>
+
+    <include name="Defs_Progress_Colorfade">
+        <include content="Defs_Progress_Colorfader">
+            <param name="info" value="Control.GetLabel($PARAM[id])" />
+        </include>
+    </include>
 
     <include name="Defs_InfoList_OnBack">
         <onback condition="!Skin.HasSetting(EnableExtendedInfo)">SetFocus(50)</onback>
@@ -148,7 +275,9 @@
         </definition>
     </include>
 
-    <include name="Defs_Null"><description>Nothing</description></include>
+    <include name="Defs_Null">
+        <description>Nothing</description>
+    </include>
 
     <variable name="Defs_Target">
         <value condition="String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,song)">music</value>
@@ -186,16 +315,157 @@
         <value condition="!String.IsEmpty(Window(home).Property(SpecialFeatures.Widget)) + !String.StartsWith(ListItem.Path,plugin://)">$INFO[Window(home).Property(SpecialFeatures.Widget)]</value>
     </variable>
 
+    <variable name="Def_Cast_List">
+        <value condition="!String.IsEmpty(ListItem.Cast)">plugin://script.embuary.helper?info=getcast&amp;type=movie&amp;title=$INFO[ListItem.Title]</value>
+    </variable>
+
     <variable name="Def_Set_List">
         <value condition="!Skin.HasSetting(DisableExtendedInfo) + !String.IsEmpty(ListItem.Set)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Set]&amp;nextpage=false</value>
         <value condition="!String.IsEmpty(ListItem.Set)">videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22set%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Set]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
     </variable>
 
-    <variable name="Def_Similar_List">        
+    <variable name="Def_Similar_List">
         <value condition="!Skin.HasSetting(DisableExtendedInfo) + String.IsEqual(ListItem.DBType,tvshow)">plugin://plugin.video.themoviedb.helper?info=similar&amp;type=tv&amp;query=$INFO[ListItem.Label]</value>
         <value condition="!Skin.HasSetting(DisableExtendedInfo) + String.IsEqual(ListItem.DBType,movie)">plugin://plugin.video.themoviedb.helper?info=similar&amp;type=movie&amp;query=$INFO[ListItem.Label]</value>
         <value condition="String.IsEqual(ListItem.DBType,movie)">plugin://script.embuary.helper/?info=getsimilar&amp;dbid=$INFO[ListItem.DBID]&amp;type=movie</value>
         <value condition="String.IsEqual(ListItem.DBType,tvshow)">plugin://script.embuary.helper/?info=getsimilar&amp;dbid=$INFO[ListItem.DBID]&amp;type=tvshow</value>
+    </variable>
+
+    <variable name="Def_Director_List">
+        <value condition="!Skin.HasSetting(DisableExtendedInfo)">plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[ListItem.Director]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;nextpage=false</value>
+        <value>videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22director%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Director]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
+    </variable>
+
+    <variable name="Def_Studio_List">
+        <value condition="!Skin.HasSetting(DisableExtendedInfo) + String.IsEqual(ListItem.DBType,tvshow)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=tv&amp;with_companies=$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID)]&amp;with_id=True&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;nextpage=false</value>
+        <value condition="Skin.HasSetting(DisableExtendedInfo) + String.IsEqual(ListItem.DBType,tvshow)">videodb://tvshows/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22studio%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Studio]%22%5d%7d%5d%7d%2c%22type%22%3a%22tvshows%22%7d</value>
+        <value condition="!Skin.HasSetting(DisableExtendedInfo)">plugin://plugin.video.themoviedb.helper?info=discover&amp;type=movie&amp;with_companies=$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.TMDB_ID)]&amp;with_id=True&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;nextpage=false</value>
+        <value condition="Skin.HasSetting(DisableExtendedInfo)">videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22studio%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Studio]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
+    </variable>
+
+    <variable name="Def_Percentage_Rating">
+        <value condition="String.IsEqual(ListItem.Rating,0.1)">1</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.2)">2</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.3)">3</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.4)">4</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.5)">5</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.6)">6</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.7)">7</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.8)">8</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.9)">9</value>
+        <value condition="String.IsEqual(ListItem.Rating,1)">10</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.0)">10</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.1)">11</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.2)">12</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.3)">13</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.4)">14</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.5)">15</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.6)">16</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.7)">17</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.8)">18</value>
+        <value condition="String.IsEqual(ListItem.Rating,1.9)">19</value>
+        <value condition="String.IsEqual(ListItem.Rating,2)">20</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.0)">20</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.1)">21</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.2)">22</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.3)">23</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.4)">24</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.5)">25</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.6)">26</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.7)">27</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.8)">28</value>
+        <value condition="String.IsEqual(ListItem.Rating,2.9)">29</value>
+        <value condition="String.IsEqual(ListItem.Rating,3)">30</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.0)">30</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.1)">31</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.2)">32</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.3)">33</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.4)">34</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.5)">35</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.6)">36</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.7)">37</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.8)">38</value>
+        <value condition="String.IsEqual(ListItem.Rating,3.9)">39</value>
+        <value condition="String.IsEqual(ListItem.Rating,4)">40</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.0)">40</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.1)">41</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.2)">42</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.3)">43</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.4)">44</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.5)">45</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.6)">46</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.7)">47</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.8)">48</value>
+        <value condition="String.IsEqual(ListItem.Rating,4.9)">49</value>
+        <value condition="String.IsEqual(ListItem.Rating,5)">50</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.0)">50</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.1)">51</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.2)">52</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.3)">53</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.4)">54</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.5)">55</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.6)">56</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.7)">57</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.8)">58</value>
+        <value condition="String.IsEqual(ListItem.Rating,5.9)">59</value>
+        <value condition="String.IsEqual(ListItem.Rating,6)">60</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.0)">60</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.1)">61</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.2)">62</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.3)">63</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.4)">64</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.5)">65</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.6)">66</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.7)">67</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.8)">68</value>
+        <value condition="String.IsEqual(ListItem.Rating,6.9)">69</value>
+        <value condition="String.IsEqual(ListItem.Rating,7)">70</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.0)">70</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.1)">71</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.2)">72</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.3)">73</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.4)">74</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.5)">75</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.6)">76</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.7)">77</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.8)">78</value>
+        <value condition="String.IsEqual(ListItem.Rating,7.9)">79</value>
+        <value condition="String.IsEqual(ListItem.Rating,8)">80</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.0)">80</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.1)">81</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.2)">82</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.3)">83</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.4)">84</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.5)">85</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.6)">86</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.7)">87</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.8)">88</value>
+        <value condition="String.IsEqual(ListItem.Rating,8.9)">89</value>
+        <value condition="String.IsEqual(ListItem.Rating,9)">90</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.0)">90</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.1)">91</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.2)">92</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.3)">93</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.4)">94</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.5)">95</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.6)">96</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.7)">97</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.8)">98</value>
+        <value condition="String.IsEqual(ListItem.Rating,9.9)">99</value>
+        <value condition="String.IsEqual(ListItem.Rating,10)">100</value>
+        <value condition="String.IsEqual(ListItem.Rating,10.0)">100</value>
+        <value>0</value>
+    </variable>
+
+    <variable name="Def_Trailer_Delay">
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:03)">$LOCALIZE[30112]</value>
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:06)">$LOCALIZE[30113]</value>
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:09)">$LOCALIZE[31117]</value>
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:14)">$LOCALIZE[31123]</value>
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:19)">$LOCALIZE[31124]</value>
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:29)">$LOCALIZE[31125]</value>
+        <value condition="String.IsEqual(Skin.String(Trailer_Delay),00:59)">$LOCALIZE[31126]</value>
+        <value>Default</value>
     </variable>
 
     <include name="Defs_Settings_OnLoad">
@@ -305,13 +575,86 @@
     <include name="Defs_Keyboard_Button">
         <width>85</width>
         <height>75</height>
-        <texturenofocus border="5" colordiffuse="dialog_fg_12">diffuse/box.png</texturenofocus>
-        <texturefocus border="5" colordiffuse="$VAR[ColorHighlight]">diffuse/box.png</texturefocus>
+        <include content="Defs_ButtonType">
+            <param name="texturenofocus" value="true" />
+            <param name="colordiffuse" value="dialog_fg_12" />
+        </include>
+        <include content="Defs_ButtonType">
+            <param name="texturefocus" value="true" />
+        </include>
         <textoffsetx>0</textoffsetx>
         <textcolor>dialog_fg_70</textcolor>
         <focusedcolor>Selected</focusedcolor>
         <radioposx>320</radioposx>
         <radioposy>22</radioposy>
+    </include>
+
+    <include name="Defs_ButtonType">
+        <param name="texture" default="false" />
+        <param name="texturefocus" default="false" />
+        <param name="texturenofocus" default="false" />
+        <param name="alttexturefocus" default="false" />
+        <param name="alttexturenofocus" default="false" />
+        <param name="colordiffuse" default="$VAR[ColorHighlight]" />
+        <definition>
+            <include content="Defs_ButtonType_Texture" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[texture]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/button-dialog.png" />
+            </include>
+            <include content="Defs_ButtonType_TextureFocus" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[texturefocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/button-dialog.png" />
+            </include>
+            <include content="Defs_ButtonType_TextureNoFocus" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[texturenofocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/button-dialog.png" />
+            </include>
+            <include content="Defs_ButtonType_AltTextureFocus" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[alttexturefocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/button-dialog.png" />
+            </include>
+            <include content="Defs_ButtonType_AltTextureNoFocus" condition="!Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[alttexturenofocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/button-dialog.png" />
+            </include>
+
+            <include content="Defs_ButtonType_Texture" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[texture]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/box.png" />
+            </include>
+            <include content="Defs_ButtonType_TextureFocus" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[texturefocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/box.png" />
+            </include>
+            <include content="Defs_ButtonType_TextureNoFocus" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[texturenofocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/box.png" />
+            </include>
+            <include content="Defs_ButtonType_AltTextureFocus" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[alttexturefocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/box.png" />
+            </include>
+            <include content="Defs_ButtonType_AltTextureNoFocus" condition="Skin.HasSetting(EnableMonochromeHighlight) + $PARAM[alttexturenofocus]">
+                <param name="colordiffuse" value="$PARAM[colordiffuse]" />
+                <param name="texture" value="common/box.png" />
+            </include>
+        </definition>
+    </include>
+
+    <include name="Defs_ButtonType_Texture">
+        <texture colordiffuse="$PARAM[colordiffuse]" border="5">$PARAM[texture]</texture>
+    </include>
+    <include name="Defs_ButtonType_TextureFocus">
+        <texturefocus colordiffuse="$PARAM[colordiffuse]" border="5">$PARAM[texture]</texturefocus>
+    </include>
+    <include name="Defs_ButtonType_TextureNoFocus">
+        <texturenofocus colordiffuse="$PARAM[colordiffuse]" border="5">$PARAM[texture]</texturenofocus>
+    </include>
+    <include name="Defs_ButtonType_AltTextureFocus">
+        <alttexturefocus colordiffuse="$PARAM[colordiffuse]" border="5">$PARAM[texture]</alttexturefocus>
+    </include>
+    <include name="Defs_ButtonType_AltTextureNoFocus">
+        <alttexturenofocus colordiffuse="$PARAM[colordiffuse]" border="5">$PARAM[texture]</alttexturenofocus>
     </include>
 
     <!-- Context Button -->
@@ -326,8 +669,8 @@
         <textureradiofocus colordiffuse="dialog_fg_70">buttons/radio-on.png</textureradiofocus>
         <textureradionofocus colordiffuse="dialog_fg_30">buttons/radio-off.png</textureradionofocus>
         <focusedcolor>Selected</focusedcolor>
-        <alttexturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</alttexturefocus>
-        <texturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturefocus>
+        <alttexturefocus colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</alttexturefocus>
+        <texturefocus colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texturefocus>
     </include>
 
     <include name="Defs_SettingsTrick">
@@ -395,6 +738,9 @@
                     <control type="image">
                         <texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
                     </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorGradient]">common/white-gradient.png</texture>
+                    </control>
                     <control type="group">
                         <width>item_list_height</width>
                         <control type="image">
@@ -419,7 +765,7 @@
     <!-- Settings Buttons -->
     <variable name="Defs_Settings_ToggleButton_Color">
         <value condition="Control.HasFocus(300) | Control.HasFocus(20)">00ffffff</value>
-        <value>$VAR[ColorHighlight]</value>
+        <value>$VAR[ColorGradient]</value>
     </variable>
     <variable name="Defs_Settings_ToggleButton_Text">
         <value condition="Control.HasFocus(300) | Control.HasFocus(20)">dialog_fg_70</value>
@@ -432,8 +778,18 @@
         <height>item_list_height</height>
         <textoffsetx>30</textoffsetx>
         <focusedcolor>$VAR[Defs_Settings_ToggleButton_Text]</focusedcolor>
-        <texturefocus colordiffuse="$VAR[Defs_Settings_ToggleButton_Color]">common/white.png</texturefocus>
-        <alttexturefocus colordiffuse="$VAR[Defs_Settings_ToggleButton_Color]">common/white.png</alttexturefocus>
+        <texturefocus />
+        <alttexturefocus />
+        <texturefocus colordiffuse="$VAR[Defs_Settings_ToggleButton_Color]">common/white-gradient.png</texturefocus>
+        <alttexturefocus colordiffuse="$VAR[Defs_Settings_ToggleButton_Color]">common/white-gradient.png</alttexturefocus>
+    </include>
+    <include name="Defs_RadioButton_NoTexture">
+        <textureradioondisabled />
+        <textureradiooffdisabled />
+        <textureradioonfocus />
+        <textureradioofffocus />
+        <textureradioonnofocus />
+        <textureradiooffnofocus />
     </include>
     <!-- Shadows -->
     <include name="Defs_Shadow_24">
@@ -475,6 +831,11 @@
                         <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorGradient]">dialog/loading-spinner.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
+                    </control>
                 </control>
                 <control type="label">
                     <description>Busy label</description>
@@ -507,6 +868,11 @@
                     <control type="image">
                         <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
                         <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorGradient]">dialog/loading-spinner.png</texture>
+                        <aspectratio>keep</aspectratio>
+                        <animation effect="fade" condition="true" start="0" end="75" pulse="true" time="1000">Conditional</animation>
                     </control>
                 </control>
             </control>
