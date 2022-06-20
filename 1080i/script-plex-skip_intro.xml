@@ -10,12 +10,12 @@
 			<bottom>30</bottom>
 			<height>60</height>
 			<width>600</width>
-			<control type="button" id="6012">
+			<control type="button" id="3002">
 				<description>Skip intro</description>
 				<width max="600">auto</width>
 				<height>60</height>
 				<font>font20_title</font>
-				<label></label>
+				<label>Skip Intro</label>
 				<textcolor>FFededed</textcolor>
 				<focusedcolor>FFededed</focusedcolor>
 				<selectedcolor>FFededed</selectedcolor>
