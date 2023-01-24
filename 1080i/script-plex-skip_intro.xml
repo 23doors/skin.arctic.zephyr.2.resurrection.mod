@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">6012</defaultcontrol>
+    <defaultcontrol always="true">3002</defaultcontrol>
 	<zorder>0</zorder>
 	<controls>
-		<control type="grouplist">
+		<control type="grouplist" id="3001">
 			<align>right</align>
 			<orientation>horizontal</orientation>
 			<right>30</right>
